@@ -269,7 +269,7 @@ public class InstrumentByteCode extends MethodVisitor {
       // push value to record
       // call `record` on CoverageLog
       super.visitFieldInsn(Opcodes.GETSTATIC, this.className,
-          "diffblue_coverage_reporter",
+          "diffblueCoverageReporter",
           "Lorg/cprover/coverage/CoverageLog;");
       super.visitLdcInsn(getUniqueIdentifier(bcLine));
       super.visitMethodInsn(Opcodes.INVOKEVIRTUAL,

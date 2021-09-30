@@ -68,7 +68,7 @@ public class ExtendStaticInit extends InstrumentByteCode {
         "()Lorg/cprover/coverage/CoverageLog;",
         false);
     mv.visitFieldInsn(Opcodes.PUTSTATIC, className,
-        "diffblue_coverage_reporter",
+        "diffblueCoverageReporter",
         "Lorg/cprover/coverage/CoverageLog;");
   }
 

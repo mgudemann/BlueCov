@@ -232,7 +232,7 @@ public final class CoverageInstrument {
     //   * InstrumentByteCode to add coverage instrumentation, or
     //   * ExtendStaticInit to also add CoverageLog creation in clinit
     FieldAdapter fa =
-        new FieldAdapter(cv, Opcodes.ACC_STATIC, "diffblue_coverage_reporter",
+        new FieldAdapter(cv, Opcodes.ACC_STATIC, "diffblueCoverageReporter",
             "Lorg/cprover/coverage/CoverageLog;",
             cr.getClassName(), offsetIdMap, instrumentedIDs);
     cr.accept(fa, 0);
