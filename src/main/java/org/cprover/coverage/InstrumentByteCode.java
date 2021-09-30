@@ -263,7 +263,7 @@ public class InstrumentByteCode extends MethodVisitor {
    * @param bcIndex an <code>int</code> value
    */
   final void instrumentByteCode(final int bcIndex) {
-    if (shouldBeInstrumented(bcLine)) {
+    if (shouldBeInstrumented(bcIndex)) {
       lastMethodWasInstrumented = true;
       // get instance from static field
       // push value to record
@@ -271,14 +271,14 @@ public class InstrumentByteCode extends MethodVisitor {
       super.visitFieldInsn(Opcodes.GETSTATIC, this.className,
           "diffblue_coverage_reporter",
           "Lorg/cprover/coverage/CoverageLog;");
-      super.visitLdcInsn(getUniqueIdentifier(bcLine));
+      super.visitLdcInsn(getUniqueIdentifier(bcIndex));
       super.visitMethodInsn(Opcodes.INVOKEVIRTUAL,
           "org/cprover/coverage/CoverageLog",
           "record",
           "(I)V",
           false);
-      debug("added ID " + getUniqueIdentifier(bcLine));
-      instrumentedLocs.add(getUniqueIdentifier(bcLine));
+      debug("added ID " + getUniqueIdentifier(bcIndex));
+      instrumentedLocs.add(getUniqueIdentifier(bcIndex));
     }
   }
 
